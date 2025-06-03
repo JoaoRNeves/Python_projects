@@ -19,6 +19,11 @@ A Python Tkinter GUI application that helps users split a total expense among mu
 
 ## Preview
 
+<img width="200" alt="Screenshot 1" src="https://github.com/user-attachments/assets/c40959ae-389b-4950-bd27-27c906d2a535" />
+
+<img width="200" alt="Screenshot 2" src="https://github.com/user-attachments/assets/48e206a7-d243-488c-b02a-6e242334e9b9" />
+
+<img width="200" alt="Screenshot 3" src="https://github.com/user-attachments/assets/084e1e51-8ea3-42a2-9345-7ec877124946" />
 
 
 ---
@@ -55,16 +60,6 @@ python Code.py
    * Custom split: Enter custom percentages for each person. The app auto-adjusts to ensure total is 100%.
 4. Click **Calculate**.
 5. The amounts each person should pay will be displayed.
-
----
-
-## Screenshots
-
-<img width="200" alt="Screenshot 1" src="https://github.com/user-attachments/assets/c40959ae-389b-4950-bd27-27c906d2a535" />
-
-<img width="200" alt="Screenshot 2" src="https://github.com/user-attachments/assets/48e206a7-d243-488c-b02a-6e242334e9b9" />
-
-<img width="200" alt="Screenshot 3" src="https://github.com/user-attachments/assets/084e1e51-8ea3-42a2-9345-7ec877124946" />
 
 ---
 
