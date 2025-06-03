@@ -26,7 +26,7 @@ A simple and interactive desktop application that helps users estimate their net
 
 ---
 
-##Installation
+## Installation
 
 Clone the repository
 ```
