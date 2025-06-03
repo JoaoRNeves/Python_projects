@@ -36,7 +36,7 @@ python Code.py
 
 **Screenshots**
 
-![Expense Splitter App]((https://joaorneves.com/python_projectsUdemy Class_2_Expense Spliter/images/Screenshot1.png)
+![Expense Splitter App](https://github.com/JoaoRNeves/Python_projects/blob/main/Udemy%20Class_2_Expense%20Spliter/images/Screenshot1.png)
 ![Expense Splitter App](https://joaorneves.com/python_projects/Udemy%20Class_2_Expense%20Splitter/images/screenshot2.png)
 ![Expense Splitter App](https://joaorneves.com/python_projects/Udemy%20Class_2_Expense%20Splitter/images/screenshot3.png)
 
