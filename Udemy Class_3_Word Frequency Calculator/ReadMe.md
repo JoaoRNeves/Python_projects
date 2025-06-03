@@ -48,7 +48,7 @@ python Code.py
 2. Either:
    
     * Click Choose File and load a .txt, .docx, or .pdf file
-             Or 
+Or 
     * Paste custom text directly into the input box
 4. Click Count Words
 5. View the top 10 most frequent words in the lower output box
