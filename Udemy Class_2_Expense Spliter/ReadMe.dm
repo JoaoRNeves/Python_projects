@@ -26,16 +26,18 @@ python Code.py
               
 **Usage**
 
-Enter the total expense amount (must be a positive number).
-Enter the number of people sharing the expense.
-Choose the split type:
-Even split: Each person pays an equal share.
-Custom split: Enter custom percentages for each person. The app auto-adjusts to ensure total is 100%.
-Click Calculate.
-The amounts each person should pay will be displayed.
-              
+- Enter the total expense amount (must be a positive number).  
+- Enter the number of people sharing the expense.  
+- Choose the split type:  
+  - Even split: Each person pays an equal share.  
+  - Custom split: Enter custom percentages for each person. The app auto-adjusts to ensure total is 100%.  
+- Click Calculate.  
+- The amounts each person should pay will be displayed.
+
 **Screenshots**
+
 ![Expense Splitter App](https://joaorneves.com/python_projects/Udemy%20Class_2_Expense%20Splitter/images/screenshot1.png)
+
 
 ![Expense Splitter App](images/screenshot2.png)
 ![Expense Splitter App](images/screenshot3.png)
