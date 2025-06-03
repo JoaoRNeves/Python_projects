@@ -15,9 +15,9 @@ A simple desktop application to analyze and visualize the most frequent words in
 ---
 
 ## Preview
-<img width="507" alt="Image" src="https://github.com/user-attachments/assets/7fe1e7df-1794-47d7-8536-ff3bb3c521c3" />
+<img width="407" alt="Image" src="https://github.com/user-attachments/assets/7fe1e7df-1794-47d7-8536-ff3bb3c521c3" />
 
-<img width="506" alt="Image" src="https://github.com/user-attachments/assets/779930c9-1537-462e-84ab-8343bce1c07b" />
+<img width="406" alt="Image" src="https://github.com/user-attachments/assets/779930c9-1537-462e-84ab-8343bce1c07b" />
 
 ---
 
