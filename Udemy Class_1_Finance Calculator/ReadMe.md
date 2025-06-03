@@ -29,8 +29,8 @@ A simple and interactive desktop application that helps users estimate their net
    ```bash
    git clone https://github.com/joaorneves/python_projects.git
    cd "python_projects/Udemy class_1_Finance Calculator/code"
-```
-
+    ```
+ 
 2. **Install dependencies**
    Make sure Python 3 is installed. Then run:
 
