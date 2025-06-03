@@ -69,7 +69,7 @@ def display_results(monthly_income, expenses, tax_rate, monthly_net_income, year
     )
 
     tk.Label(result_window, text=results, justify="left", font=FONT,
-             bg="white", padx=10, pady=10).pack()
+             bg="white", fg="black", padx=10, pady=10).pack()
 
     # ===============================
     # Matplotlib Savings Plot
@@ -123,26 +123,31 @@ def display_results(monthly_income, expenses, tax_rate, monthly_net_income, year
 # ===============================
 root = tk.Tk()
 root.title("Finance Calculator")
-root.geometry("420x320")
-root.config(bg="white")
+root.config(bg="white")  # set main window background
 
 # --- Input Fields ---
-tk.Label(root, text="Enter Monthly Salary:", font=FONT, bg="white").grid(row=0, column=0, padx=10, pady=10, sticky="w")
-monthly_income_entry = tk.Entry(root, font=FONT)
+tk.Label(root, text="Enter Monthly Salary:", font=FONT, bg="white", fg="black").grid(row=0, column=0, padx=10, pady=10, sticky="w")
+monthly_income_entry = tk.Entry(root, font=FONT, bg="white", fg="black", insertbackground="black")
 monthly_income_entry.grid(row=0, column=1)
 
-tk.Label(root, text="Enter Monthly Expenses:", font=FONT, bg="white").grid(row=1, column=0, padx=10, pady=10, sticky="w")
-expenses_entry = tk.Entry(root, font=FONT)
+tk.Label(root, text="Enter Monthly Expenses:", font=FONT, bg="white", fg="black").grid(row=1, column=0, padx=10, pady=10, sticky="w")
+expenses_entry = tk.Entry(root, font=FONT, bg="white", fg="black", insertbackground="black")
 expenses_entry.grid(row=1, column=1)
 
-tk.Label(root, text="Enter Tax Rate (%):", font=FONT, bg="white").grid(row=2, column=0, padx=10, pady=10, sticky="w")
-tax_rate_entry = tk.Entry(root, font=FONT)
+tk.Label(root, text="Enter Tax Rate (%):", font=FONT, bg="white", fg="black").grid(row=2, column=0, padx=10, pady=10, sticky="w")
+tax_rate_entry = tk.Entry(root, font=FONT, bg="white", fg="black", insertbackground="black")
 tax_rate_entry.grid(row=2, column=1)
 
 # --- Currency Selection ---
-tk.Label(root, text="Select Currency:", font=FONT, bg="white").grid(row=3, column=0, padx=10, pady=10, sticky="w")
+tk.Label(root, text="Select Currency:", font=FONT, bg="white", fg="black").grid(row=3, column=0, padx=10, pady=10, sticky="w")
 currency_var = tk.StringVar(value=CURRENCIES[0])
-currency_menu = ttk.OptionMenu(root, currency_var, *CURRENCIES)
+
+# Using ttk.OptionMenu - set style to fix dark theme issues
+style = ttk.Style(root)
+style.theme_use('clam')
+style.configure('TMenubutton', background='white', foreground='black')
+
+currency_menu = ttk.OptionMenu(root, currency_var, CURRENCIES[0], *CURRENCIES)
 currency_menu.grid(row=3, column=1)
 
 # --- Calculate Button ---
