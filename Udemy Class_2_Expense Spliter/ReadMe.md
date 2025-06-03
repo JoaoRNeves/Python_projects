@@ -25,17 +25,23 @@ A Python Tkinter GUI application that helps users split a total expense among mu
 
 ## Installation
 
-1. **Clone the repository**  
-   ```bash
-   git clone https://github.com/joaorneves/python_projects.git
-   cd "python_projects/Udemy Class_2_Expense Splitter"
-    ````
-
-2. **Run the application**
-
-   ```bash
-   python Code.py
+Clone the repository
+  ```
+git clone https://github.com/JoaoRNeves/Python_projects.git
+cd "Python_projects/Udemy Class_2_Expense Spliter"
+  ```
+(Optional) Create and activate a virtual environment
+  ```
+python3 -m venv venv
+source venv/bin/activate   # On Windows use `venv\Scripts\activate`
+  ```
+Install dependencies
+  ```
+No external packages required — this app uses only Python’s built-in Tkinter module.
+Run the application
+python Code.py
    ```
+ 
 
 ---
 
