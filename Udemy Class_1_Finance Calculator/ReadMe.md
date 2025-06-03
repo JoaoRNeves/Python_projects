@@ -94,10 +94,5 @@ Created as part of a small projects series to practice Python and GUI developmen
 Built with the support of AI tools to accelerate coding and learning (mainly the GUI).
 Feedback and contributions are welcome!
 
-```
-
----
-
-
 
 
