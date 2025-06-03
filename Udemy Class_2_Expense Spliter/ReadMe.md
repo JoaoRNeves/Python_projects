@@ -25,7 +25,6 @@ A Python Tkinter GUI application that helps users split a total expense among mu
 
 <img width="200" alt="Screenshot 3" src="https://github.com/user-attachments/assets/084e1e51-8ea3-42a2-9345-7ec877124946" />
 
-
 ---
 
 ## Installation
@@ -49,7 +48,6 @@ Run the application
 python Code.py
    ```
  
-
 ---
 
 ## Usage
