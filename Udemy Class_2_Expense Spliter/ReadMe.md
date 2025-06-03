@@ -41,9 +41,11 @@ python3 -m venv venv
 source venv/bin/activate   # On Windows use `venv\Scripts\activate`
   ```
 Install dependencies
-  ```
-No external packages required — this app uses only Python’s built-in Tkinter module.
+
+  No external packages required — this app uses only Python’s built-in Tkinter module.
+
 Run the application
+   ```
 python Code.py
    ```
  
