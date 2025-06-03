@@ -2,92 +2,89 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 
 class ExpenseSplitterApp(tk.Tk):
-    """
-    A GUI application for splitting expenses evenly or by custom proportions among multiple people.
-    """
+    # Main application class inheriting from Tkinter's Tk
+    
     def __init__(self):
         super().__init__()
         self.title("Expense Splitter with Proportional Custom Split")
-        self.geometry("500x600")
-        self.resizable(False, False)
+        self.geometry("500x600")  # Set fixed window size
+        self.resizable(False, False)  # Disable resizing
 
-        # Variables to hold user inputs
+        # Variables to store user inputs and app state
         self.total_amount_var = tk.StringVar()
         self.num_people_var = tk.StringVar()
-        self.split_type_var = tk.StringVar(value="even")  # Default split type
+        self.split_type_var = tk.StringVar(value="even")  # Default to even split
 
-        self.custom_percentage_vars = []  # List to hold StringVars for custom percentages
-        self.updating = False  # Flag to prevent recursive trace callbacks
+        self.custom_percentage_vars = []  # List of StringVars for custom split percentages
+        self.updating = False  # Flag to avoid recursive updates when tracing variable changes
 
-        self.create_widgets()
+        self.create_widgets()  # Build the GUI elements
 
     def create_widgets(self):
-        """
-        Creates all the widgets in the main window:
-        - Inputs for total amount and number of people
-        - Radio buttons for split type selection
-        - Dynamic inputs for custom split percentages
-        - Calculate button and result display area
-        """
-        # Total amount input
+        # Create all widgets: labels, entries, radio buttons, buttons, and result display
+
+        # Label and entry for total amount input
         ttk.Label(self, text="Total amount:").pack(pady=(20, 5))
         ttk.Entry(self, textvariable=self.total_amount_var).pack()
 
-        # Number of people input
+        # Label and entry for number of people input
         ttk.Label(self, text="Number of people:").pack(pady=(15, 5))
         ttk.Entry(self, textvariable=self.num_people_var).pack()
 
-        # Split type selection radio buttons
+        # Label for split type radio buttons
         ttk.Label(self, text="Split type:").pack(pady=(15, 5))
 
+        # Frame to hold split type radio buttons
         split_frame = ttk.Frame(self)
         split_frame.pack()
 
+        # Radio button for even split option
         ttk.Radiobutton(
             split_frame, text="Even split", variable=self.split_type_var, value="even",
-            command=self.update_custom_inputs
+            command=self.update_custom_inputs  # Update UI when changed
         ).grid(row=0, column=0, padx=10)
 
+        # Radio button for custom split option
         ttk.Radiobutton(
             split_frame, text="Custom split", variable=self.split_type_var, value="custom",
             command=self.update_custom_inputs
         ).grid(row=0, column=1, padx=10)
 
-        # Frame to hold dynamic custom percentage inputs
+        # Frame where custom split percentage entries will be created dynamically
         self.custom_inputs_frame = ttk.Frame(self)
         self.custom_inputs_frame.pack(pady=(10, 10))
 
-        # Calculate button
+        # Button to trigger calculation of shares
         ttk.Button(self, text="Calculate", command=self.calculate).pack(pady=10)
 
-        # Text widget to display results (read-only)
+        # Text widget to display calculation results (disabled for editing)
         self.result_text = tk.Text(self, height=12, state="disabled")
         self.result_text.pack(padx=10, pady=10, fill="x")
 
     def update_custom_inputs(self):
-        """
-        Called when split type or number of people changes.
-        Clears and rebuilds the custom percentage input fields if 'custom' split is selected.
-        Sets up trace callbacks to keep percentages consistent.
-        """
-        # Clear any existing widgets and variables in the custom input frame
+        # Called when split type or number of people changes
+
+        # Clear previous custom percentage inputs and variables
         for widget in self.custom_inputs_frame.winfo_children():
             widget.destroy()
         self.custom_percentage_vars.clear()
 
         if self.split_type_var.get() == "custom":
-            # Validate number of people for custom split
+            # If custom split is selected, validate number of people
             try:
                 num = int(self.num_people_var.get())
                 if num < 2:
+                    # Custom split requires at least 2 people
                     messagebox.showerror("Input Error", "Number of people must be at least 2 for custom split.")
                     return
             except ValueError:
-                return  # If number of people input is invalid, silently return
+                # If number input invalid, skip creating inputs
+                return
 
+            # Label to instruct user to enter percentages
             ttk.Label(self.custom_inputs_frame, text="Enter percentage for each person:").pack()
 
-            # Create StringVars and Entry widgets for each person's percentage
+            # Create entry fields for each person's percentage
             for i in range(num):
                 var = tk.StringVar()
                 self.custom_percentage_vars.append(var)
@@ -95,38 +92,36 @@ class ExpenseSplitterApp(tk.Tk):
                 frame = ttk.Frame(self.custom_inputs_frame)
                 frame.pack(fill="x", pady=2)
 
+                # Label showing which person the percentage is for
                 ttk.Label(frame, text=f"Person {i+1} (%):", width=15).pack(side="left")
+
+                # Entry widget for input
                 entry = ttk.Entry(frame, textvariable=var, width=10)
                 entry.pack(side="left")
 
-                # Add trace callbacks for live synchronization of percentages
+                # Add trace callback to update last person's percentage automatically
                 if i < num - 1:
-                    # For all but last person, update the last person's percentage when changed
-                    var.trace_add('write', self.make_handler(i))
+                    var.trace_add('write', self.make_handler(i))  # For all but last person
                 else:
-                    # For last person, adjust others proportionally on change
-                    var.trace_add('write', self.last_person_handler)
+                    var.trace_add('write', self.last_person_handler)  # For last person
 
-            # Initialize all percentages equally
+            # Initialize all percentages evenly distributed
             equal_percent = 100 / num
             for var in self.custom_percentage_vars:
                 var.set(f"{equal_percent:.2f}")
 
-            # Update last person's percentage to correct any rounding issues
+            # Ensure last person's percentage is updated correctly after initialization
             self.update_last_percentage()
 
     def make_handler(self, index):
-        """
-        Factory function that returns a handler to update the last person's
-        percentage when any other person's percentage changes.
-        """
+        # Factory function to generate a trace handler for each person except last
         def handler(*args):
             if self.updating:
                 return  # Prevent recursive updates
             self.updating = True
             try:
                 total = 0.0
-                # Sum percentages of all but the last person
+                # Sum all but last person's percentages
                 for i, var in enumerate(self.custom_percentage_vars[:-1]):
                     try:
                         val = float(var.get())
@@ -134,7 +129,7 @@ class ExpenseSplitterApp(tk.Tk):
                             raise ValueError
                         total += val
                     except ValueError:
-                        # Ignore invalid inputs while typing
+                        # Ignore invalid inputs during typing
                         self.updating = False
                         return
 
@@ -143,26 +138,23 @@ class ExpenseSplitterApp(tk.Tk):
                 if last_val < 0:
                     last_val = 0  # Clamp to zero if total exceeds 100
 
+                # Update last person's percentage
                 self.custom_percentage_vars[-1].set(f"{last_val:.2f}")
             finally:
                 self.updating = False
         return handler
 
     def last_person_handler(self, *args):
-        """
-        Handler to adjust other persons' percentages proportionally when
-        the last person's percentage is changed.
-        """
+        # Handler to proportionally adjust other percentages when last person's changes
         if self.updating:
             return
         self.updating = True
         try:
-            # Validate last person's percentage
             try:
                 last_val = float(self.custom_percentage_vars[-1].get())
                 if last_val < 0 or last_val > 100:
                     self.updating = False
-                    return
+                    return  # Invalid percentage input
             except ValueError:
                 self.updating = False
                 return
@@ -182,42 +174,39 @@ class ExpenseSplitterApp(tk.Tk):
             total_others = sum(others_vals)
             current_total = total_others + last_val
 
-            diff = 100 - current_total
+            diff = 100 - current_total  # Difference to fix sum to 100%
 
             if abs(diff) < 0.01:
-                # Percentages already sum to ~100%
+                # Already close to 100%, no change needed
                 self.updating = False
                 return
 
             if total_others == 0:
-                # Distribute difference evenly if others are zero
+                # If all others are zero, distribute difference evenly
                 per_person_adjust = diff / len(others)
                 new_vals = [max(0, val + per_person_adjust) for val in others_vals]
             else:
-                # Adjust others proportionally
+                # Otherwise adjust others proportionally based on their current values
                 new_vals = []
                 for val in others_vals:
                     proportion = val / total_others if total_others != 0 else 0
                     new_val = val + diff * proportion
-                    new_val = max(0, new_val)
+                    new_val = max(0, new_val)  # Prevent negative values
                     new_vals.append(new_val)
 
-            # Normalize to make sure sum + last_val = 100
+            # Normalize new values so total with last person equals 100
             new_sum = sum(new_vals)
             scale = (100 - last_val) / new_sum if new_sum != 0 else 0
             new_vals = [v * scale for v in new_vals]
 
-            # Update other percentages without triggering trace callbacks
+            # Update others without triggering traces
             for var, new_val in zip(others, new_vals):
                 var.set(f"{new_val:.2f}")
         finally:
             self.updating = False
 
     def update_last_percentage(self):
-        """
-        Helper method to update the last person's percentage based on others.
-        Called during initialization to ensure total 100%.
-        """
+        # Helper to update last person's percentage so total is exactly 100%
         try:
             total = 0.0
             for var in self.custom_percentage_vars[:-1]:
@@ -227,15 +216,13 @@ class ExpenseSplitterApp(tk.Tk):
                 last_val = 0
             self.custom_percentage_vars[-1].set(f"{last_val:.2f}")
         except Exception:
-            # Ignore errors during initial setup
+            # Ignore any errors during initial setup
             pass
 
     def calculate(self):
-        """
-        Calculates and displays the expense split based on user input.
-        Validates inputs and shows errors if invalid.
-        Supports both even and custom splits.
-        """
+        # Calculate and display the split amounts based on inputs
+
+        # Enable and clear the result text widget
         self.result_text.config(state="normal")
         self.result_text.delete("1.0", tk.END)
 
@@ -261,5 +248,39 @@ class ExpenseSplitterApp(tk.Tk):
             # Even split calculation
             share = total / num_people
             self.result_text.insert(tk.END, f"Total expense: €{total:,.2f}\n")
-            self.result_text.insert(tk.END, f"Number of people:
+            self.result_text.insert(tk.END, f"Number of people: {num_people}\n")
+            self.result_text.insert(tk.END, f"Each person pays: €{share:.2f}\n")
 
+        else:
+            # Custom split calculation
+            percentages = []
+            for i, var in enumerate(self.custom_percentage_vars):
+                try:
+                    p = float(var.get())
+                    if not (0 <= p <= 100):
+                        raise ValueError
+                    percentages.append(p)
+                except ValueError:
+                    messagebox.showerror("Input Error", f"Percentage for Person {i+1} must be between 0 and 100.")
+                    return
+
+            total_percent = sum(percentages)
+            if abs(total_percent - 100) > 0.01:
+                # Percentages must sum to 100%
+                messagebox.showerror("Input Error", f"Percentages add up to {total_percent:.2f}%. They must total 100%.")
+                return
+
+            self.result_text.insert(tk.END, f"Total expense: €{total:,.2f}\n")
+            self.result_text.insert(tk.END, f"Number of people: {num_people}\n")
+            # Show each person's amount based on percentage
+            for i, p in enumerate(percentages):
+                amount = total * (p / 100)
+                self.result_text.insert(tk.END, f"Person {i+1} pays ({p:.2f}%): €{amount:.2f}\n")
+
+        # Disable editing of the result text again
+        self.result_text.config(state="disabled")
+
+if __name__ == "__main__":
+    # Run the application
+    app = ExpenseSplitterApp()
+    app.mainloop()
