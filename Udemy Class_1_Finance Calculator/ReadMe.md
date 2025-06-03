@@ -23,27 +23,27 @@ A simple and interactive desktop application that helps users estimate their net
 
 ---
 
-## Installation
+##Installation
 
-1. **Clone the repository**  
-   ```bash
-   git clone https://github.com/joaorneves/python_projects.git
-   cd "python_projects/Udemy class_1_Finance Calculator/code"
-    ```
- 
-2. **Install dependencies**
-   Make sure Python 3 is installed. Then run:
-
-   ```bash
-   pip install matplotlib
-   ```
-
-3. **Run the application**
-
-   ```bash
-   python code.py
-   ```
-
+Clone the repository
+```
+git clone https://github.com/JoaoRNeves/Python_projects.git
+cd "Python_projects/Udemy Class_1_Finance Calculator"
+```
+(Optional) Create and activate a virtual environment
+```
+python3 -m venv venv
+source venv/bin/activate   # On Windows use `venv\Scripts\activate`
+```
+Install dependencies
+This project requires Matplotlib. Install it with:
+```
+pip install matplotlib
+```
+Run the application
+```
+python Code.py
+```
 ---
 
 ## Usage
