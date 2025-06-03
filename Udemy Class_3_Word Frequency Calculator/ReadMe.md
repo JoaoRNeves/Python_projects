@@ -15,7 +15,9 @@ A simple desktop application to analyze and visualize the most frequent words in
 ---
 
 ## Preview
+\<img width="507" alt="Image" src="https://github.com/user-attachments/assets/7fe1e7df-1794-47d7-8536-ff3bb3c521c3" />
 
+<img width="506" alt="Image" src="https://github.com/user-attachments/assets/779930c9-1537-462e-84ab-8343bce1c07b" />
 
 ---
 
@@ -24,7 +26,7 @@ A simple desktop application to analyze and visualize the most frequent words in
 Clone the repository
 ```
 git clone https://github.com/JoaoRNeves/Python_projects.git
-cd "Python_projects/Udemy Class_3_Word Frequency Counter"
+cd "Python_projects/Udemy Class_3_Word Frequency Calculator"
 ```
 (Optional) Create a virtual environment
 ```
