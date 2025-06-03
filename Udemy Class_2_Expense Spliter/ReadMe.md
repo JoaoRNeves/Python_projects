@@ -36,9 +36,12 @@ python Code.py
 
 **Screenshots**
 
+
+<img width="505" alt="Image" src="https://github.com/user-attachments/assets/48e206a7-d243-488c-b02a-6e242334e9b9" />
+
+<img width="504" alt="Image" src="https://github.com/user-attachments/assets/c40959ae-389b-4950-bd27-27c906d2a535" />
+
 <img width="505" alt="Image" src="https://github.com/user-attachments/assets/084e1e51-8ea3-42a2-9345-7ec877124946" />
-![Expense Splitter App](https://joaorneves.com/python_projects/Udemy%20Class_2_Expense%20Splitter/images/screenshot2.png)
-![Expense Splitter App](https://joaorneves.com/python_projects/Udemy%20Class_2_Expense%20Splitter/images/screenshot3.png)
 
 **Known Issues / Limitations**
 
