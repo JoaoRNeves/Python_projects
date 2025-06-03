@@ -35,7 +35,9 @@ Click Calculate.
 The amounts each person should pay will be displayed.
               
 **Screenshots**
-
+![Expense Splitter App](images/screenshot1.png)
+![Expense Splitter App](images/screenshot2.png)
+![Expense Splitter App](images/screenshot3.png)
 
 **Known Issues / Limitations**
 
