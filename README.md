@@ -1,11 +1,50 @@
-# Python_projects
+# 🐍 Python Projects
 
+This repository is where I keep track of my Python learning journey — a mix of side projects, tools I’ve developed to support my research, and random bits of code that helped me solve small problems along the way. Most of the content here was developed independently, with some occasional help from AI (especially when building GUIs or fixing annoying bugs I couldn’t untangle on my own).
 
-This repositoir is a personal place were I place code that I idenpendently developed has a side_job or in the context of my scientific work. It is really a beginner space where you can see what I have excperimented, with a lot of troubleshooting in between and some AI help incorporated in code that I originally created (mainly to create the GUI).
+You’ll probably find (now or in the future):
+- Beginner-level scripts that helped me understand Python basics  
+- Utility tools for text parsing, data cleaning, and simple file automation  
+- GUI experiments for personal use or lab tasks  
+- Lots of comments, some messy logic, and notes-to-self  
 
+> This is not meant to be a polished portfolio — it's more of a digital notebook.  
+> I'm sharing it publicly because:
+> - It helps me track what I’ve done and how I think  
+> - Maybe others can learn from the mistakes I’ve made  
+> - I believe in open, transparent learning
 
+---
 
+## 🧠 Why Coding?
 
-**Personal Background**
+I am startin to learn how to code because I realized how much it could help me in my day-to-day research work. From processing large sets of microscopy or MRI images, to cleaning data or building small automation tools — coding can make things faster, more reproducible, and less frustrating overall.
 
-João R. Neves (JRN) is a PhD student in the Doctoral Program in Experimental Biology and Biomedicine at the Institute of Interdisciplinary Research, University of Coimbra. He is conducting his thesis research at the Coimbra Institute for Biomedical Imaging and Translational Research (CIBIT) under the supervision of Dr. Joana Gonçalves (CIBIT), Dr. Jorge Valero (University of Salamanca), and Dr. Miguel Castelo Branco (CIBIT). JRN was awarded an FCT PhD fellowship (2024.00392.BD) to support his studies and his project: "MicroKiss: How Kisspeptin and Microglia Shape the Sex-Typical Neuronal Circuits of Social Behaviour". JRN recently completed his research fellowship at CIBIT in September 2024. He earned his Master’s in Molecular and Translational Neurosciences in October 2023 from the University of Coimbra's Faculty of Medicine, graduating with a final grade of 18. His dissertation, titled The Role of Kisspeptin in Sexual Differentiation of the Developing Brain, was awarded a grade of 20. He previously earned his undergraduate degree in Biochemistry from the University of Aveiro in July 2021, with a final grade of 15. His undergraduate research project, Pd2spermin (Spm) Effect on the Lipophilic Metabolome of Mice Brain, received a grade of 17. He has also co-authored an article published in a Q1 journal, presented his work as 1st author with a poster in 3 national and 2 international conferences, and 1 oral communication in an international conference, having received travel grants to all the international conferences. JRN's primary research interest lies in neurodevelopment, particularly in the sexual differentiation of the brain and the role of microglia. He is passionate about using imaging techniques to explore brain architecture and neuronal circuits, employing high-resolution methods such as various microscopy modalities and lower-resolution techniques like magnetic resonance imaging and spectroscopy. Additionally, he is committed to advancing his knowledge in deep learning and machine learning to improve the reproducibility and objectivity of scientific research. Beyond his research, JRN is deeply invested in knowledge transfer, open science and science communication. He supervised one bachelor’s final project, one master’s thesis, and mentored several master’s students during their laboratory rotations. JRN actively participates in outreach activities, engaging diverse audiences, including children, the general public, and the international scientific community. Recently, he designed the logo and contributed to the development of his lab’s website (www.diverselab-cibit.com).
+It also feels like an essential skill to have in today’s research and job market. Knowing how to code, mainly python, opens doors to fields like data science, image analysis, and machine learning — all of which are increasingly connected to biology and neuroscience. So even if I’m still figuring it all out, I know it’s worth the effort.
+
+Plus, there’s something really satisfying about writing a few lines of code and watching them actually do something useful.
+
+---
+
+## 🧬 A Bit About Me
+
+I’m a PhD student working in neurodevelopment and biomedical imaging. Python isn't part of my formal training, but I picked it up along the way to help make sense of data, automate tasks, and eventually dive into machine learning. What started as a side skill is slowly becoming part of how I think about science.
+
+I use this repo to:
+- Keep track of code that *actually* worked  
+- Practice writing better, clearer scripts  
+- Build toward more reproducible science  
+
+---
+
+## ⚠️ Disclaimer
+
+Expect bugs. Expect strange variable names. Expect workarounds that got the job done but might not be elegant.  
+I'm learning — and that’s the point.
+
+---
+
+Thanks for passing by — feel free to explore, suggest changes, or use anything that’s helpful in your own journey.
+
+🧪🐍  
+**João**
