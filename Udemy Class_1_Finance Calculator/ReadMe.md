@@ -75,16 +75,6 @@ python Code.py
 
 ---
 
-## Project Structure
-
-```
-Finance-Calculator/
-├── code.py
-└── README.md
-```
-
----
-
 ## License
 
 This project is open source and free to use 
