@@ -35,6 +35,8 @@ python Code.py
 - The amounts each person should pay will be displayed.
 
 **Screenshots**
+
+
 <img width="200" alt="Image" src="https://github.com/user-attachments/assets/c40959ae-389b-4950-bd27-27c906d2a535" />
 
 <img width="200" alt="Image" src="https://github.com/user-attachments/assets/48e206a7-d243-488c-b02a-6e242334e9b9" />
