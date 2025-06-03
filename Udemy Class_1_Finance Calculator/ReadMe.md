@@ -20,6 +20,9 @@ A simple and interactive desktop application that helps users estimate their net
 ## Preview
 
 
+<img width="361" alt="Image" src="https://github.com/user-attachments/assets/304cd901-2b62-4756-a121-0ee6d406ea79" />
+
+<img width="654" alt="Image" src="https://github.com/user-attachments/assets/e2c7e19d-1610-4aa7-9ce8-38b0fd41780c" />
 
 ---
 
