@@ -1,3 +1,8 @@
+# ===============================
+# Word Frequency Counter (Tkinter GUI)
+# ===============================
+
+# ---- Imports ----
 import os
 import re
 from collections import Counter
@@ -6,15 +11,23 @@ from tkinter import filedialog, messagebox, scrolledtext
 from docx import Document
 from PyPDF2 import PdfReader
 
-# -------------------- Utility Functions --------------------
+# ===============================
+# Text Analysis Functions
+# ===============================
 
 def get_frequency(text: str) -> list[tuple[str, int]]:
+    """
+    Count and return the 10 most common words in the input text.
+    """
     lowered_text = text.lower()
     words = re.findall(r'\b\w+\b', lowered_text)
     word_counts = Counter(words)
     return word_counts.most_common(10)
 
 def extract_text_from_file(file_path: str) -> str:
+    """
+    Extract text content from .txt, .docx, or .pdf files.
+    """
     _, ext = os.path.splitext(file_path)
     ext = ext.lower()
 
@@ -30,9 +43,14 @@ def extract_text_from_file(file_path: str) -> str:
     else:
         raise ValueError(f"Unsupported file type: {ext}")
 
-# -------------------- GUI Functions --------------------
+# ===============================
+# GUI Button Callback Functions
+# ===============================
 
 def load_file():
+    """
+    Open file dialog and load text from the selected file into the input box.
+    """
     file_path = filedialog.askopenfilename(
         filetypes=[
             ("Text files", "*.txt"),
@@ -51,6 +69,9 @@ def load_file():
         messagebox.showerror("Error", f"Could not load file:\n{e}")
 
 def process_text():
+    """
+    Analyze input text and display the top 10 most frequent words.
+    """
     text = text_input.get("1.0", tk.END).strip()
     if not text:
         messagebox.showwarning("Empty Input", "Please enter or load some text.")
@@ -65,6 +86,9 @@ def process_text():
     output.config(state='disabled')
 
 def export_results():
+    """
+    Export the results area content to a .txt file.
+    """
     content = output.get("1.0", tk.END).strip()
     if not content:
         messagebox.showinfo("No Data", "No results to export.")
@@ -82,15 +106,19 @@ def export_results():
         except Exception as e:
             messagebox.showerror("Error", f"Could not save file:\n{e}")
 
-# -------------------- GUI Layout --------------------
+# ===============================
+# Main GUI Layout
+# ===============================
 
 root = tk.Tk()
 root.title("Word Frequency Counter")
 root.geometry("700x600")
 
+# --- Instruction Label ---
 label = tk.Label(root, text="Upload a file or enter text below:", font=("Arial", 14))
 label.pack(pady=10)
 
+# --- File Buttons Frame ---
 file_frame = tk.Frame(root)
 file_frame.pack(pady=5)
 
@@ -100,17 +128,18 @@ file_btn.pack(side="left", padx=10)
 export_btn = tk.Button(file_frame, text="Export Results", command=export_results)
 export_btn.pack(side="left", padx=10)
 
-# Manual input
+# --- Manual Text Input ---
 text_input = scrolledtext.ScrolledText(root, wrap=tk.WORD, width=80, height=12)
 text_input.pack(pady=10)
 
-# Count button
+# --- Process Button ---
 process_btn = tk.Button(root, text="Count Words", command=process_text)
 process_btn.pack(pady=10)
 
-# Output
+# --- Results Output Box ---
 output = scrolledtext.ScrolledText(root, wrap=tk.WORD, width=80, height=10, state='disabled')
 output.pack(pady=10)
 
+# --- Start Application Loop ---
 root.mainloop()
 
