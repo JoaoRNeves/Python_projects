@@ -1,4 +1,4 @@
-# 📊 USV Data Analysis and Visualization
+# USV Data Analysis and Visualization
 
 [![Python](https://img.shields.io/badge/Python-3.9%2B-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -8,7 +8,7 @@ A user-friendly desktop application for advanced statistical analysis and visual
 
 ---
 
-## ✨ Key Features
+## Key Features
 
 - **Flexible Data Loading**  
   Load aggregated USV data with a simple folder selection (supports `animal_metadata.csv` and multiple USV `.csv` files).
@@ -44,7 +44,7 @@ A user-friendly desktop application for advanced statistical analysis and visual
 
 ---
 
-## 📷 Preview
+## Preview
 
 | Step | Description | Screenshot |
 |------|-------------|------------|
@@ -59,7 +59,7 @@ A user-friendly desktop application for advanced statistical analysis and visual
 
 ---
 
-## 🚀 Installation
+## Installation
 
 ### 1️⃣ Clone the Repository
 
@@ -99,7 +99,7 @@ ___
 
 Before running the application, ensure your data is organized in the following structure:
 
-### 🔖 Folder Structure
+### Folder Structure
 ```
 your-data-folder/
 │
@@ -116,7 +116,7 @@ All files should be located inside a single folder.
 
 The filenames of individual USV files must match exactly the values listed in the Filename column of animal_metadata.csv.
 
-### 🗂️ Metadata File: animal_metadata.csv
+### Metadata File: animal_metadata.csv
 ```
 animal_id	Sex	Genotype	Timepoint	Filename
 A01	M	WT	P4	A01_P4_USVs.csv
@@ -136,7 +136,7 @@ Timepoint: developmental stage (P4, P6, etc.).
 
 Filename: exact filename of the corresponding USV file.
 
-### 🐭 USV Files: {animal_id}_{Timepoint}_USVs.csv
+###  USV Files: {animal_id}_{Timepoint}_USVs.csv
 These files are directly exported from DeepSqueak and contain call-by-call ultrasonic vocalization data.
 ```
 ID	Label	Accepted	Score	Begin Time (s)	End Time (s)	Call Length (s)	Principal Frequency (kHz)	Low Freq (kHz)	High Freq (kHz)	Delta Freq (kHz)	Frequency Standard Deviation (kHz)	Slope (kHz/s)	Sinuosity	Mean Power (dB/Hz)	Tonality	Peak Freq (kHz)
@@ -151,7 +151,7 @@ Avoid missing values in critical fields like Call Length (s) or Peak Freq (kHz) 
 The application automatically reads and merges metadata with these files using the Filename field.
 
 ---
-## 🖱️ Quick Usage Guide
+## Quick Usage Guide
 
 1. Launch Code_data visualization.py.
 2. Use Data Input tab to select your dataset folder.
@@ -162,7 +162,7 @@ The application automatically reads and merges metadata with these files using t
 
 ---
 
-## 🧰 Tech Stack
+## Tech Stack
 - Python 3.9+
 - Tkinter - GUI
 - Pandas - data manipulation
@@ -177,28 +177,28 @@ The application automatically reads and merges metadata with these files using t
 
 While the USV Data Analyzer provides a robust framework for analyzing ultrasonic vocalization data, there are some current limitations to keep in mind:
 
-### 🔧 Fixed Variable Names
+### Fixed Variable Names
 The code assumes fixed column names in the metadata file for key experimental factors:
 
 `Sex` `Genotype` `Timepoint`
 
 Any deviations from these column names will require manual adjustment of the source code.
 
-### 🔠 Predefined Factor Labels
+### Predefined Factor Labels
 Certain categorical values are hardcoded:
 
 `SEX_LABELS = ['F', 'M']` `GENOTYPE_LABELS = ['WT', 'MUT']` `TIMEPOINT_ORDER = ['P4', 'P6']`
 
 If your dataset includes additional groups or uses different labels (e.g., P2 or alternative genotype codes), you must update these lists in the code manually.
 
-### 📊 Assumed Data Structure
+### Assumed Data Structure
 The tool expects:
 - A animal_metadata.csv file with the columns: animal_id, Sex, Genotype, Timepoint, Filename.
 - Individual USV files exported directly from DeepSqueak, containing specific numeric columns.
   
 Any mismatch in column names, missing columns, or alternative structures will likely result in errors during data loading or processing.
 
-### 📂 Hardcoded File Paths
+### Hardcoded File Paths
 File paths such as:
 - aggregated_data_path
 - plot_output_dir
@@ -207,7 +207,7 @@ File paths such as:
 
 These are defined relative to the main script directory. Users wishing to use different directories must edit these paths manually in the code.
 
-### 📉 Specific Statistical Tests
+### Specific Statistical Tests
 The current version includes a predefined set of statistical analyses:
 - ANOVA (One-Way, Two-Way, Mixed)
 - Kruskal-Wallis
@@ -220,18 +220,18 @@ The current version includes a predefined set of statistical analyses:
 
 Additional or alternative statistical methods are not yet implemented and would require extending the codebase.
 
-### 📄 Limited Input Format
+### Limited Input Format
 - The application only accepts data in CSV format (.csv).
 - Other data formats (e.g. Excel, SPSS, HDF5) are not supported without custom parsing modifications.
   
-### 🖥 No GUI for Configuration
+### No GUI for Configuration
 - Although the analysis workflow features a graphical interface for data loading and running analyses, configuration elements (e.g. factor labels, file paths, additional metrics) still require manual code editing.
 - There is currently no GUI for advanced configuration or for adapting the code to new datasets automatically.
 ___
 
-## 📄 License
+## License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
