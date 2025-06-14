@@ -44,9 +44,17 @@ A user-friendly desktop application for advanced statistical analysis and visual
 
 ---
 
-## 📷 Screenshots
+## 📷 Preview
 
-Main Interface
+| Step | Description | Screenshot |
+|------|-------------|------------|
+| 1 | Folder Upload | <img width="1203" alt="Image" src="https://github.com/user-attachments/assets/b4acf43d-3bcf-4623-ab81-7da8e7d1d00a" /> |
+| 2 | Data Report | <img width="1204" alt="Image" src="https://github.com/user-attachments/assets/6b75ca72-d468-4f3f-ad98-f15b93e8f094" /> |
+| 3 | Analysis Options | <img width="1206" alt="Image" src="https://github.com/user-attachments/assets/a91ee0c0-3e3f-4d98-ae6b-2d1ecf969d36" /> |
+| 4 | User input to choose which test follow when criteria for parametric test is not met | <img width="264" alt="Image" src="https://github.com/user-attachments/assets/24b02f56-aede-4578-ae99-934d7c434a1e" /> |
+| 5 | Statistical Output | <img width="1203" alt="Image" src="https://github.com/user-attachments/assets/41595f9e-d365-40b6-8253-7b248314f19b" /> |
+| 6 | Graphical representation | <img width="1203" alt="Image" src="https://github.com/user-attachments/assets/e3fb99e9-5625-4978-9cc2-333f48ae957a" /> |
+
 
 
 ---
