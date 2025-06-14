@@ -235,13 +235,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 🙏 Acknowledgements
+## Acknowledgements
 - Developed by João R. Neves.
 - Built with the support of AI-powered tools for debugging and GUI building.
 - Special thanks to the open-source community for pandas, numpy, scipy, statsmodels, seaborn, matplotlib, and pingouin.
 
 ---
 
-## 💡 Contributions
+## Contributions
 
 Suggestions, feature requests, or pull requests are welcome! Feel free to open an issue or contact me directly.
