@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20MacOS%20%7C%20Linux-lightgrey)]()
 
-A user-friendly desktop application for advanced statistical analysis and visualization of Ultrasonic Vocalization (USV) data. Designed for preclinical researchers working with USV metrics across various experimental conditions such as sex, genotype, and developmental timepoints.
+A user-friendly desktop application for advanced statistical analysis and visualization of Ultrasonic Vocalization (USV) data directly extracted from DeepSqueak. Designed for preclinical researchers working with USV metrics across various experimental conditions such as sex, genotype, and developmental timepoints.
 
 ---
 
