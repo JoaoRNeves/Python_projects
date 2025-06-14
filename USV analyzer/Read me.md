@@ -46,11 +46,8 @@ A user-friendly desktop application for advanced statistical analysis and visual
 
 ## 📷 Screenshots
 
-| Main Interface | Statistical Output | Graph Output |
-| -------------- | ------------------ | ------------- |
-| ![Main Interface](assets/screenshot_main.png) | ![Stat Output](assets/screenshot_stats.png) | ![Graph Output](assets/screenshot_graph.png) |
+Main Interface
 
-> Replace these placeholder images with your own screenshots (place them inside a folder called `/assets/`).
 
 ---
 
@@ -59,17 +56,18 @@ A user-friendly desktop application for advanced statistical analysis and visual
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/your-repository-name.git
-cd your-repository-name
+git clone https://github.com/JoaoRNeves/Python_projects.git
+cd "Python_projects/USV analyzer"
 ```
-Replace your-username and your-repository-name accordingly.
 
 
 2️⃣ (Optional but recommended) Create Virtual Environment
 ```
 python3 -m venv venv
+
 # Activate on Unix/macOS
 source venv/bin/activate
+
 # Activate on Windows
 venv\Scripts\activate
 ```
